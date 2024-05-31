@@ -1,0 +1,78 @@
+<div class="admin_page">
+
+  <%= link_to "Finished Websites", finished_website_url, class: "btn btn-pink text-grey text-uppercase rounded-pill fw-bold" %>
+  <%= link_to "Confirmation Forms", confirming_url, class: "btn btn-pink text-grey text-uppercase rounded-pill fw-bold" %>
+  <%= link_to "Site Update", news_url, class: "btn btn-pink text-grey text-uppercase rounded-pill fw-bold" %>
+  <%= link_to "Add in new Skills", skills_url, class: "btn btn-pink text-grey text-uppercase rounded-pill fw-bold" %>
+  <%= button_to "Log out", destroy_admin_session_path, method: :delete, form: {  data: { turbo: :false } }, class: "btn btn-pink text-grey text-uppercase rounded-pill fw-bold" %>
+
+  <div class="primary_admin">
+    <div class="user_requests col-6">
+      <% WebsiteRequest.all.each do |form|%>
+        <div class="mybox">
+          <strong>Website Name:</strong> <%= form.website_name %><br>
+           <strong>Reason: </strong><%= form.why_website %><br>
+           <strong>Description: </strong><%= form.website_description %><br>
+           <strong>Deadline: </strong><%= form.deadline.strftime('%D') %><br><br>
+          <label for="cars">Status</label>
+          <select id="options" name="options">
+            <option value="complete">COMPLETED</option>
+            <option value="working">WORKING</option>
+            <option value="recieved">RECIEVED</option>
+            <option value="decline">DECLINED</option>
+          </select>
+        </div>
+      <% end %>
+    </div>
+    <div class="your_feedback col-6">
+      <% ConfirmationForm.all.each do |form|%>
+        <div class="mybox2">
+          <strong><%= form.project_assignment %><br></strong>
+          <%= form.website_assessment %>
+          <%= form.overall_comment %><br>
+          £<%= form.price_offer %><br>
+          <%= form.deadline_possibility %><br>
+          <%= link_to "Edit form", edit_confirmation_form_path(form) %>
+
+        </div>
+
+      <% end %>
+
+
+    </div>
+
+  </div>
+
+
+
+</div>
+
+<%# class CreateConfirmationForms < ActiveRecord::Migration[7.0]
+  def change
+    create_table :confirmation_forms do |t|
+
+      t.string :request_assigned
+      t.string :website_assessment
+      t.string :overall_comment
+      t.string :deadline_possibility
+      t.integer :price_offer
+      t.references :admin, null: false, foreign_key: true
+
+      t.timestamps
+    end
+  end
+end
+
+
+class CreateReviewForms < ActiveRecord::Migration[7.0]
+  def change
+    create_table :review_forms do |t|
+      t.string :review_title
+      t.string :review
+      t.integer :rating
+      t.references :user, null: false, foreign_key: true
+
+      t.timestamps
+    end
+  end
+end %>

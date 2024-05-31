@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Site updates</h1>
+
+<div id="site_updates">
+  <% @site_updates.each do |site_update| %>
+    <%= render site_update %>
+    <p>
+      <%= link_to "Show this site update", site_update %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New site update", new_site_update_path %>

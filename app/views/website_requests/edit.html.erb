@@ -1,0 +1,13 @@
+<h1>Editing website request</h1>
+
+<%= render "form", website_request: @website_request %>
+
+<br>
+
+<div>
+  <%= link_to "Process", @website_request, class: "btn btn-pink text-grey text-uppercase rounded-pill fw-bold" %>
+   <%= button_to "Delete request", @website_request, method: :delete, class: "btn btn-pink text-grey text-uppercase rounded-pill fw-bold" %>
+  <%# <%= link_to "View all requests", website_requests_path, class: "btn btn-pink text-grey text-uppercase rounded-pill fw-bold" %>
+  <%= link_to "Back to the main page", user_registration_url, class: "btn btn-pink text-grey text-uppercase rounded-pill fw-bold" %>
+
+</div>

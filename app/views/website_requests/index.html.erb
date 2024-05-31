@@ -1,0 +1,15 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Website requests</h1>
+
+<div id="website_requests">
+  <% @website_requests.each do |website_request| %>
+    <%= render website_request %>
+    <p>
+      <%= link_to "Show this website request", website_request %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New website request", new_website_request_path, class: "btn btn-pink text-grey text-uppercase rounded-pill fw-bold" %>
+<%= link_to "Back to the main page", user_registration_url, class: "btn btn-pink text-grey text-uppercase rounded-pill fw-bold" %>

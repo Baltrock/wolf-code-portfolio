@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Skill lists</h1>
+
+<div id="skill_lists">
+  <% @skill_lists.each do |skill_list| %>
+    <%= render skill_list %>
+    <p>
+      <%= link_to "Show this skill list", skill_list %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New skill list", new_skill_list_path %>

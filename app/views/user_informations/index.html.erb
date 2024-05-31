@@ -1,0 +1,18 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>User information</h1>
+
+<div id="user_informations">
+  <% @user_informations.each do |user_information| %>
+    <%= render user_information %>
+    <p>
+      <%= link_to "Show this user information", user_information, class: "btn btn-pink text-grey text-uppercase rounded-pill fw-bold" %>
+    </p>
+  <% end %>
+</div>
+<% if @user_informations.count == 1 %>
+    <%# <%= link_to "Edit my information", @user_information, class: "btn btn-pink text-grey text-uppercase rounded-pill fw-bold" %>
+    <%= link_to "Back to the Main Page", user_registration_url, class: "btn btn-pink text-grey text-uppercase rounded-pill fw-bold" %>
+<% else %>
+  <%= link_to "New user information", new_user_information_path, class: "btn btn-pink text-grey text-uppercase rounded-pill fw-bold" %>
+<% end %>

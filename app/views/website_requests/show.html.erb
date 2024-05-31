@@ -1,0 +1,11 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @website_request %>
+
+<div>
+  <%= link_to "Edit website request", edit_website_request_path(@website_request), class: "btn btn-pink text-grey text-uppercase rounded-pill fw-bold" %><br>
+  <%# <%= link_to "View all website requests", website_requests_path, class: "btn btn-pink text-grey text-uppercase rounded-pill fw-bold" %>
+  <%= link_to "Back to the main page", user_registration_url, class: "btn btn-pink text-grey text-uppercase rounded-pill fw-bold" %>
+
+  <%= button_to "Delete request", @website_request, method: :delete, class: "btn btn-pink text-grey text-uppercase rounded-pill fw-bold" %>
+</div>

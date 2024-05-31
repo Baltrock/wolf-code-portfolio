@@ -1,0 +1,34 @@
+<div class="user_page">
+
+  <%= link_to "user information", user_info_url, class: "btn btn-pink text-grey text-uppercase rounded-pill fw-bold" %>
+  <%= link_to "website request", requests_url, class: "btn btn-pink text-grey text-uppercase rounded-pill fw-bold" %>
+  <%# <%= link_to "review", reaction_url, class: "btn btn-pink text-grey text-uppercase rounded-pill fw-bold" %>
+  <%= link_to "complaint", complain_url, class: "btn btn-pink text-grey text-uppercase rounded-pill fw-bold" %>
+  <%= button_to "Log out", destroy_user_session_path, method: :delete, form: {  data: { turbo: :false } }, class: "btn btn-pink text-grey text-uppercase rounded-pill fw-bold" %>
+  <%# <%= link_to "cancel order(s)", cancel_url, class: "btn btn-pink text-grey text-uppercase rounded-pill fw-bold" %>
+
+  <div class="requests col-8">
+    <% WebsiteRequest.all.each do |form|%>
+      <div class="infobox">
+        <strong><%= form.website_name %><br></strong>
+          <%= form.why_website %><br>
+          <%= form.website_description %><br>
+          <%= form.deadline.strftime('%D') %><br>
+          <%= link_to "Edit or Destroy", edit_website_request_path(form), class: "btn btn-pink text-grey fw-bold"  %>
+          <%# <%= link_to "Delete request", website_request_path(form), method: :delete, class: "btn btn-pink text-grey fw-bold" %>
+      </div>
+
+    <% end %>
+  </div>
+  <div class="results col-4">
+    <% ConfirmationForm.all.each do |form|%>
+      <div class="infobox">
+        <strong><%= form.project_assignment %><br></strong>
+          <%= form.website_assessment %>
+          <%= form.overall_comment %><br>
+          <%= form.price_offer %><br>
+          <%= form.deadline_possibility.strftime('%D') %><br>
+      </div>
+    <% end %>
+  </div>
+</div>

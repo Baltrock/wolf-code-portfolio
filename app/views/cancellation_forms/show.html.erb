@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @cancellation_form %>
+
+<div>
+  <%= link_to "Edit this cancellation form", edit_cancellation_form_path(@cancellation_form) %> |
+  <%= link_to "Back to cancellation forms", cancellation_forms_path %>
+
+  <%= button_to "Destroy this cancellation form", @cancellation_form, method: :delete %>
+</div>

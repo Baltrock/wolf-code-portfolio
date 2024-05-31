@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @site_update %>
+
+<div>
+  <%= link_to "Edit this site update", edit_site_update_path(@site_update) %> |
+  <%= link_to "Back to site updates", site_updates_path %>
+
+  <%= button_to "Destroy this site update", @site_update, method: :delete %>
+</div>

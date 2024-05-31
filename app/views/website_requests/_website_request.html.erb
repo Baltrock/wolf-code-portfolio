@@ -1,0 +1,27 @@
+<div id="<%= dom_id website_request %>">
+  <p>
+    <strong>Website name:</strong>
+    <%= website_request.website_name %>
+  </p>
+
+  <p>
+    <strong>Why website:</strong>
+    <%= website_request.why_website %>
+  </p>
+
+  <p>
+    <strong>Website description:</strong>
+    <%= website_request.website_description %>
+  </p>
+
+  <p>
+    <strong>Deadline:</strong>
+    <%= website_request.deadline.strftime('%D') %>
+  </p>
+
+  <%# <p> %>
+    <%# <strong>User:</strong> %>
+    <%# <%= website_request.user_id %>
+  <%# </p> %>
+
+</div>

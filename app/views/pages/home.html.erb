@@ -1,2 +1,25 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="home">
+  <div class="intro_box">
+    <h1><strong>The WOLF Code</strong></h1>
+    <p>Welcome to the WOLF Code. My name is Ben Murphy. <br>I am a full stack web developer and project co-ordinator.<br> Please see below the list of features I am experienced in. <br>If you are looking to build a website to expand on your craft,<br> advertise your company, etc., please create an account and send a request. <br>I must add that there is a maximum queue of 3 projects at a time. <br>Your application will be responded to but work may not start straight away. <br>You will be notified when work on your website has begun. </p>
+  </div>
+
+  <div class="which_root">
+  <div class="alignment">
+    <div class="user col-5">
+      <%= link_to "User Log In", user_session_path( status: { status:"user" }), class: "btn btn-pink text-grey text-uppercase fw-bold", style: "color:black"%>
+    </div>
+    <div class="user col-5">
+      <%= link_to "New User", new_user_registration_path( status: { status:"user" }), class: "btn btn-pink text-grey text-uppercase fw-bold", style: "color:black"%>
+    </div>
+
+    <div class="admin col-5">
+      <%= link_to "Admin Log In", admin_session_path( status: { status:"admin" }), class: "btn btn-pink text-grey text-uppercase fw-bold", style: "color:black" %>
+    </div>
+    <div class="admin col-5">
+      <%= link_to "New Admin", new_admin_registration_path( status: { status:"admin" }), class: "btn btn-pink text-grey text-uppercase fw-bold", style: "color:black" %>
+    </div>
+
+  </div>
+</div>
+</div>

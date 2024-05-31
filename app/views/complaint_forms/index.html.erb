@@ -1,0 +1,15 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Complaint forms</h1>
+
+<div id="complaint_forms">
+  <% @complaint_forms.each do |complaint_form| %>
+    <%= render complaint_form %>
+    <p>
+      <%= link_to "Edit form", complaint_form,  class: "btn btn-pink text-grey text-uppercase rounded-pill fw-bold" %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New Complaint", new_complaint_form_path,  class: "btn btn-pink text-grey text-uppercase rounded-pill fw-bold" %>
+<%= link_to "Back to the main page", user_registration_url, class: "btn btn-pink text-grey text-uppercase rounded-pill fw-bold" %><br>

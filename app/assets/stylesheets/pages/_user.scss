@@ -1,0 +1,25 @@
+.user_page {
+  margin: 10px;
+  padding: 10px;
+  background-color: bisque;
+}
+
+.requests {
+  padding: 10px;
+  background-color: antiquewhite;
+  grid-template-columns: 1fr 1fr 1fr;
+  display: grid;
+}
+
+.offer_results {
+  padding: 10px;
+  background-color: antiquewhite;
+  grid-template-columns: 1fr;
+}
+
+.infobox {
+  margin: 10px;
+  padding: 5px;
+  width: 250px;
+  background-color: aqua;
+}

@@ -1,0 +1,38 @@
+.admin_page {
+  margin: 10px;
+  padding: 10px;
+  background-color: rgb(193, 170, 142);
+}
+
+.user_requests {
+  padding: 10px;
+  background-color: antiquewhite;
+  grid-template-columns: 1fr;
+  display: grid;
+}
+
+.your_feedback {
+  padding: 10px;
+  background-color: antiquewhite;
+  grid-template-columns: 1fr;
+}
+
+.primary_admin {
+  display: flex;
+}
+
+.mybox {
+  margin: 10px;
+  padding: 5px;
+  width: 500px;
+  background-color: aquamarine;
+  position: sticky;
+  height: 200px;
+}
+
+.mybox2 {
+  margin: 10px;
+  padding: 5px;
+  width: 350px;
+  background-color: aquamarine;
+}

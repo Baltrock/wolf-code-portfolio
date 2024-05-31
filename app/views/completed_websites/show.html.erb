@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @completed_website %>
+
+<div>
+  <%= link_to "Edit this completed website", edit_completed_website_path(@completed_website) %> |
+  <%= link_to "Back to completed websites", completed_websites_path %>
+
+  <%= button_to "Destroy this completed website", @completed_website, method: :delete %>
+</div>
